@@ -9,7 +9,7 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, Usern
 UPDATES_CHANNEL = UPDATES_CHANNEL
 
 
-@Client.on_message(filters.incoming & filters.command(['start', 'start@{BOT_USERNAME}']))
+@Client.on_message(filters.incoming & filters.command(['starttt', 'start@{BOT_USERNAME}']))
 def _start(client, message):
     update_channel = UPDATES_CHANNEL
     if update_channel:
@@ -18,7 +18,7 @@ def _start(client, message):
             if user.status == "kicked":
                client.send_message(
                    chat_id=message.chat.id,
-                   text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/AwesomeSupportt).",
+                   text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/vexana_support).",
                    parse_mode="markdown",
                    disable_web_page_preview=True
                )
@@ -43,8 +43,8 @@ def _start(client, message):
 	        reply_markup=InlineKeyboardMarkup(
                     [
                         [   
-                           InlineKeyboardButton("Join Updates Channel", url="https://t.me/LaylaList"),
-                           InlineKeyboardButton("Support Group", url="https://t.me/AwesomeSupport")
+                           InlineKeyboardButton("Join Updates Channel", url="https://t.me/vexana_updates"),
+                           InlineKeyboardButton("Support Group", url="https://t.me/vexana_support")
                       ],
                      [
                            InlineKeyboardButton("🧑‍💻Devloper🧑‍💻", url="https://t.me/HEROGAMERS1")
@@ -63,8 +63,8 @@ def _start(client, message):
 	reply_markup=InlineKeyboardMarkup(
             [
 		[
-                    InlineKeyboardButton("Updates Channel", url="https://t.me/LaylaList"),
-                    InlineKeyboardButton("Support Group", url="https://t.me/AwesomeSupport")
+                    InlineKeyboardButton("Updates Channel", url="https://t.me/vexana_updates"),
+                    InlineKeyboardButton("Support Group", url="https://t.me/vexana_support")
                 ],
                 [
                     InlineKeyboardButton("🧑‍💻Devloper🧑‍💻", url="https://t.me/HEROGAMERS1")	
@@ -78,14 +78,14 @@ def _start(client, message):
         reply_to_message_id=message.message_id
         )
 
-@Client.on_message(filters.command(["start", f"start@{BOT_USERNAME}"]) & filters.group & ~filters.channel)
+@Client.on_message(filters.command(["starttt", f"start@{BOT_USERNAME}"]) & filters.group & ~filters.channel)
 async def gstart(_, message: Message):
     await message.reply_text(
         text="**Music Bot Is Online ✅**",
         reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/AwesomeSupport"),
-            InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/LaylaList")
+            InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/vexana_support"),
+            InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/vexana_support")
             ],
             [
             
@@ -94,7 +94,7 @@ async def gstart(_, message: Message):
     )
 
 
-@Client.on_message(filters.command(["help", f"help@{BOT_USERNAME}"]) & filters.private & ~filters.channel)
+@Client.on_message(filters.command(["helppp", f"help@{BOT_USERNAME}"]) & filters.private & ~filters.channel)
 async def cmdlist(_, message: Message):
     await message.reply_text(
         text=f"""<b>✨ **Welcome user, i'm {query.message.from_user.mention}** \n
@@ -128,8 +128,8 @@ __× First Add Me To Your Group..
 </b>""",
         reply_markup=InlineKeyboardMarkup(
               [[
-              InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/AwesomeSupport"),
-              InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/LaylaList")
+              InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/vexana_support"),
+              InlineKeyboardButton(text="📣 Channel", url=f"https://t.me/vexana_support")
               ],[
               InlineKeyboardButton("🏡 BACK TO HOME", callback_data="cbstart")
               ]]
